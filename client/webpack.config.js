@@ -16,16 +16,18 @@ module.exports = () => {
       path: path.resolve(__dirname, "dist"),
     },
     plugins: [
-      // HTML plugin for index.html and includes the favicon for the tab display
+      // HTML plugin that generate the index.html and includes the favicon for the tab display, which is injected to the bundles
       new HtmlWebpackPlugin({
         template: "./index.html",
         title: "JATE",
         favicon: "./favicon.ico",
       }),
+      // Injects our custom service worker into the webpack bundle
       new InjectManifest({
         swSrc: "./src-sw.js",
         swDest: "src-sw.js",
       }),
+      // Creates the manifest.json file that is used to install the app on mobile devices with icons and other information
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
@@ -57,6 +59,7 @@ module.exports = () => {
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
+          // Babel loader for transpiling ES6 to ES5
           use: {
             loader: "babel-loader",
             options: {

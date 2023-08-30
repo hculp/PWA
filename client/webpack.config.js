@@ -3,7 +3,7 @@ const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
 const { InjectManifest } = require("workbox-webpack-plugin");
 
-// Webpack configuration for service worker and manifest file 
+// Webpack configuration for service worker and manifest file
 module.exports = () => {
   return {
     mode: "development",
@@ -17,12 +17,12 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "./src/index.html",
+        template: "./index.html",
         title: "JATE",
       }),
       new InjectManifest({
-        swSrc: "./src/js/sw.js",
-        swDest: "sw.js",
+        swSrc: "./src-sw.js",
+        swDest: "src-sw.js",
       }),
       new WebpackPwaManifest({
         name: "Just Another Text Editor",
@@ -35,7 +35,7 @@ module.exports = () => {
         publicPath: "/",
         icons: [
           {
-            src: path.resolve("src/assets/icons/logo.png"),
+            src: path.resolve("src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join("assets", "icons"),
           },
@@ -60,10 +60,14 @@ module.exports = () => {
           use: {
             loader: "babel-loader",
             options: {
-              presets: ['@babel/preset-env'],
-              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
-            }
-        }
+              presets: ["@babel/preset-env"],
+              plugins: [
+                "@babel/plugin-proposal-object-rest-spread",
+                "@babel/transform-runtime",
+              ],
+            },
+          },
+        },
       ],
     },
   };

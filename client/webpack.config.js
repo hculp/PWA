@@ -29,8 +29,8 @@ module.exports = () => {
         short_name: "JATE",
         description:
           "JATE is a simple note taking app that allows you to create, edit, and delete notes.",
-        background_color: "#272822",
-        theme_color: "#ffffff",
+        background_color: "#225ca3",
+        theme_color: "#225ca3",
         start_url: "/",
         publicPath: "/",
         icons: [
@@ -56,7 +56,7 @@ module.exports = () => {
         },
         {
           test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
+          exclude: /(node_modules)/,
           use: {
             loader: "babel-loader",
             options: {

@@ -16,9 +16,11 @@ module.exports = () => {
       path: path.resolve(__dirname, "dist"),
     },
     plugins: [
+      // HTML plugin for index.html and includes the favicon for the tab display
       new HtmlWebpackPlugin({
         template: "./index.html",
         title: "JATE",
+        favicon: "./favicon.ico",
       }),
       new InjectManifest({
         swSrc: "./src-sw.js",

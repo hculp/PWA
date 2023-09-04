@@ -42,7 +42,7 @@ This will also build the client side dist folder that creates the bundled Javasc
 
 ## Usage
 
-Once the application is installed and running, enter some code text first the test the application in running properly, and check the browser devtools simiarily done here to ensure all features work or if any modifications are needed to meet specifications.
+Once the application is installed and running, enter some code text first to test that the application is running properly, and check the browser devtools simiarily done here to ensure all features work or if any modifications are needed to meet specifications.
 
 > ![](./assets/images/PWA-JATE-test-text.png)
 > This image is an example that shows the application's manifest.json file.

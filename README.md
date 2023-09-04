@@ -4,8 +4,8 @@
 
 ## Description
 
-This is Progressive Web Application (PWA) for a Javascript based text editor. It is a single page application that uses various data persistence techniques that serve a redudancy in case an option is not supported by browser.
-The app also functions offline with an install feature. Data is stored and retrieved through the IndexedDB database API through the idb package.
+This is Progressive Web Application (PWA) for a Javascript based text editor. It is a single page application that uses various data persistence techniques that serve as a redudancy in case an option is not supported by browser.
+The app also functions offline and also has an install feature. Data is stored and retrieved through the IndexedDB database API through the idb package.
 
 The app fits the needs of a user that wants to create notes or code snippets, either online/offline, so that they can be easily used later. When a user opens the editor, then the user should be able find that IndexedDB has immediately created database storage by checking with devtools. Wehen entering content and then clicking off the DOM window, the application saves the data with IndexedDB. When a user reopens the text editor after closing it, the content in the text editor persisest and is retrieved from the IndexedDB storage. Users can click the install button feature to download the web app as an icon on their desktop as well. When the web application loads, a registered service worker using workbox should exist. When a service worker is registered, then the static assets pre cached upon loading along with subsequent pages and static assets are there.
 
